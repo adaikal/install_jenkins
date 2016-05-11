@@ -13,8 +13,23 @@ install_jenkins() {
 
 }
 
+check_wget() {
+	
+	if ! type wget &> /dev/null;then
+		echo "wget is not installed"
+		echo "Installing wget..."
+		
+		sudo apt install -y wget
+	else
+		return
+	fi
+}
+
 if ! type jenkins &> /dev/null;then
 	echo "Jenkins is not installed"
 	echo "Installing jenkins..."
 	
 	install_jenkins
+else
+	echo "Jenkins is already installed..."
+fi

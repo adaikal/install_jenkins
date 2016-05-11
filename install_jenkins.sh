@@ -9,6 +9,7 @@ install_jenkins() {
 	sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 	sudo apt update
 	sudo apt install -y jenkins
+	sleep 10
 	sudo service jenkins start
 
 }
